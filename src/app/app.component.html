@@ -38,7 +38,6 @@
 
   </div>
 
-  <!-- Resources -->
   <h2>Resources</h2>
   <p>The mathematical problems on this page are taken from Project Euler:</p>
 
@@ -59,32 +58,11 @@
   <input type="hidden" #selection>
 
   <div class="card-container">
-    <div class="card card-small" (click)="selection.value = '1'" tabindex="0">
+    <div *ngFor="let problemIdTitle of problemIdTitleDictionary" class="card card-small" (click)="selection.value = problemIdTitle.id" tabindex="0">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
 
-      <span>Multiples of 3 and 5</span>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = '2'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
-
-      <span>Even Fibonacci numbers</span>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = '3'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
-
-      <span>Largest prime factor</span>
-    </div>
-
-    <div class="card card-small" (click)="selection.value = '4'" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
-
-      <span>Largest palindrome product</span>
+      <span>{{ problemIdTitle.title }}</span>
     </div>
   </div>
 
