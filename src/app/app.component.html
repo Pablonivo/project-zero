@@ -55,8 +55,6 @@
   <h2>Solutions</h2>
   <p>Click on a problem to see the detailed explanation and the solution. The solutions are computed in real-time.</p>
 
-  <input type="hidden" #selection>
-
   <div class="card-container">
     <div *ngFor="let projectEulerProblem of projectEulerProblemDictionary" class="card card-small" (click)="idSelectedProblem = projectEulerProblem.id" tabindex="0">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -69,7 +67,7 @@
   <div *ngIf="idSelectedProblem !== 0">
     {{getDescriptionById(idSelectedProblem)}}
   </div>
-  
+
   <div class="terminal" [ngSwitch]="idSelectedProblem">
     <pre *ngSwitchDefault>No problem selected</pre>
     <pre *ngSwitchCase="'1'">{{projectEulerHelper.solutionOfProblem1}}</pre>
