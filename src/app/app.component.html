@@ -94,9 +94,9 @@
 
 <!-- Terminal -->
 <div class="terminal" [ngSwitch]="selection.value">
-    <pre *ngSwitchDefault></pre>
-    <pre *ngSwitchCase="'1'">Solution 1 should be here</pre>
-    <pre *ngSwitchCase="'2'">Solution 2 should be here</pre>
+    <pre *ngSwitchDefault>Real-time computed solutions will show up here when you click on a problem.</pre>
+    <pre *ngSwitchCase="'1'">{{projectEulerHelper.solutionOfProblem1}}</pre>
+    <pre *ngSwitchCase="'2'">{{projectEulerHelper.solutionOfProblem2}}</pre>
 </div>
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"
