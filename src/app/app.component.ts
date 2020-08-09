@@ -44,7 +44,7 @@ export class AppComponent {
     switch(id){
       case 1:
       case 2:
-      case 3: return `The solution is ${this.getSolutionById(id)} and it was computed in ${this.projectEulerHelper._numberOfMillisecondsUsedForLastComputation} milliseconds.`
+      case 3: return `${this.getSolutionById(id)} (computed in ${this.projectEulerHelper._numberOfMillisecondsUsedForLastComputation} ms)`
       default: return this.getSolutionById(id).toString();
     }
   }
