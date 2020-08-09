@@ -23,4 +23,11 @@ describe('ProjectEulerHelper', () => {
             expect(resultProblem2).toBe(4613732);
         })
     })
+
+    describe('solutionOfProblem3', () => {
+        it('should return the correct solution', () => {
+            const resultProblem3 = _sut.solutionOfProblem3;
+            expect(resultProblem3).toBe(6857);
+        })
+    })
 });

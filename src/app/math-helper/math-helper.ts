@@ -14,4 +14,23 @@ export class MathHelper {
         }
         return fibonacciSequence;
     }
+
+    /**
+     * Returns a list of prime factors, where a prime can occur more than once. 
+     */
+    getListOfPrimeFactors(number: number): number[] {
+        let listOfPrimeFactors = [];
+        let i = 2;
+
+        while (number !== 1) {
+            if (number % i === 0){
+                number /= i;
+                listOfPrimeFactors.push(i);
+            }
+            else {
+                i++;
+            }
+        }
+        return listOfPrimeFactors;
+    }
 }

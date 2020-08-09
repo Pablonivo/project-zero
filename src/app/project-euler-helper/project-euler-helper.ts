@@ -12,6 +12,10 @@ export class ProjectEulerHelper{
             .filter(x => x % 2 === 0)
             .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
     }
+
+    get solutionOfProblem3(): number {
+        return Math.max(...this._mathHelper.getListOfPrimeFactors(600851475143));
+    }
     
     _getSumOfMultiplesOfNumbersBelowMax(numbers: number[], max: number): number {
         var multiplesList = [];
