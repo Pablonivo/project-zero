@@ -46,6 +46,7 @@ export class ProjectEulerHelper{
 
     private _end(): void {
         this._endTime = performance.now();
-        this._numberOfMillisecondsUsedForLastComputation = this._endTime - this._startTime;
+        // We are for now only interested in the number of milliseconds, so we use round to ignore arbitrary high precision.
+        this._numberOfMillisecondsUsedForLastComputation = Math.round(this._endTime - this._startTime);
     }
 }
