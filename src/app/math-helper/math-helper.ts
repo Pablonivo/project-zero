@@ -33,4 +33,17 @@ export class MathHelper {
         }
         return listOfPrimeFactors;
     }
+
+    isPalindromeNumber(number: number): boolean {
+        let numberToString = number.toString();
+        let stringLength = numberToString.length;
+
+        for (let i = 0; i < stringLength; i++){
+            if (numberToString[i] != numberToString[stringLength - i - 1]){
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

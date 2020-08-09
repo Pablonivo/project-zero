@@ -28,6 +28,13 @@ export class ProjectEulerHelper{
         this._end();
         return result;
     }
+
+    get solutionOfProblem4(): number {
+        this._start();
+        let result = this._getHighestPalindromeNumberAsProductOfTwoNumbersBelowMax(1000);
+        this._end();
+        return result;
+    }
     
     _getSumOfMultiplesOfNumbersBelowMax(numbers: number[], max: number): number {
         var multiplesList = [];
@@ -38,6 +45,21 @@ export class ProjectEulerHelper{
         }
 
         return multiplesList.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    }
+
+    _getHighestPalindromeNumberAsProductOfTwoNumbersBelowMax(max: number): number {
+        let highestPalinedromeNumberFound = 1;
+
+        for (let i = 1; i < max; i++) {
+            for (let j = 1; j < max; j++) {
+                let product = i * j;
+                if (this._mathHelper.isPalindromeNumber(product) && product > highestPalinedromeNumberFound){
+                    highestPalinedromeNumberFound = product;
+                }
+            }
+        }
+
+        return highestPalinedromeNumberFound;
     }
 
     private _start(): void {

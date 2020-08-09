@@ -34,7 +34,7 @@ export class AppComponent {
       case 3:
         return this.projectEulerHelper.solutionOfProblem3;
       case 4:
-        return "TODO: In progress";
+        return this.projectEulerHelper.solutionOfProblem4;
       default:
         return "No problem selected";
     }
@@ -44,7 +44,8 @@ export class AppComponent {
     switch(id){
       case 1:
       case 2:
-      case 3: return `${this.getSolutionById(id)} (computed in ${this.projectEulerHelper._numberOfMillisecondsUsedForLastComputation} ms)`
+      case 3: 
+      case 4: return `${this.getSolutionById(id)} (computed in ${this.projectEulerHelper._numberOfMillisecondsUsedForLastComputation} ms)`
       default: return this.getSolutionById(id).toString();
     }
   }

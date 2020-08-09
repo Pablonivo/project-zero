@@ -26,4 +26,16 @@ describe('MathHelper', () => {
             expect(result2).toEqual([5, 7, 13, 29]);
         })
     })
+
+    describe('isPalindromeNumber', () => {
+        it('should true if the number is a palindrome', () => {
+            const result = _sut.isPalindromeNumber(9009);
+            expect(result).toBe(true);
+        })
+
+        it('should false if the number is not a palindrome', () => {
+            const result = _sut.isPalindromeNumber(9109);
+            expect(result).toBe(false);
+        })
+    })
 });
