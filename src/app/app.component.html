@@ -68,12 +68,8 @@
     {{getDescriptionById(idSelectedProblem)}}
   </div>
 
-  <div class="terminal" [ngSwitch]="idSelectedProblem">
-    <pre *ngSwitchDefault>No problem selected</pre>
-    <pre *ngSwitchCase="'1'">{{projectEulerHelper.solutionOfProblem1}}</pre>
-    <pre *ngSwitchCase="'2'">{{projectEulerHelper.solutionOfProblem2}}</pre>
-    <pre *ngSwitchCase="'3'">{{projectEulerHelper.solutionOfProblem3}}</pre>
-    <pre *ngSwitchCase="'4'">TODO: In progress</pre>
+  <div class="terminal">
+    <pre>{{showResultById(idSelectedProblem)}}</pre>
   </div>
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ProjectEulerHelper } from './project-euler-helper/project-euler-helper';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   constructor(readonly projectEulerHelper: ProjectEulerHelper) {
@@ -22,6 +23,30 @@ export class AppComponent {
 
   getDescriptionById(id: number): string {
     return this.projectEulerProblemDictionary.find(problem => problem.id === id).description;
+  }
+
+  getSolutionById(id: number): number | string {
+    switch(id){
+      case 1:
+        return this.projectEulerHelper.solutionOfProblem1;
+      case 2:
+        return this.projectEulerHelper.solutionOfProblem2;
+      case 3:
+        return this.projectEulerHelper.solutionOfProblem3;
+      case 4:
+        return "TODO: In progress";
+      default:
+        return "No problem selected";
+    }
+  }
+
+  showResultById(id: number): string {
+    switch(id){
+      case 1:
+      case 2:
+      case 3: return `The solution is ${this.getSolutionById(id)} and it was compued in ${this.projectEulerHelper._numberOfMillisecondsUsedForLastComputation} milliseconds.`
+      default: return this.getSolutionById(id).toString();
+    }
   }
 }
 
