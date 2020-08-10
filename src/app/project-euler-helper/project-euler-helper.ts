@@ -50,6 +50,13 @@ export class ProjectEulerHelper{
         this._end();
         return result;
     }
+
+    get solutionOfProblem7(): number {
+        this._start();
+        let result = this._mathHelper.getNthPrime(10001);
+        this._end();
+        return result;
+    }
     
     _getSumOfMultiplesOfNumbersBelowMax(numbers: number[], max: number): number {
         var multiplesList = [];

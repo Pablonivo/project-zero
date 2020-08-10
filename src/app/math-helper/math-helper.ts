@@ -68,4 +68,38 @@ export class MathHelper {
 
         return true;
     }
+
+    getNthPrime(n: number): number {
+        let numberOfPrimesFound = 0;
+        let i = 1;
+
+        while (numberOfPrimesFound < n){
+            i++;
+
+            if (this._isPrime(i) === true) {
+                numberOfPrimesFound++;
+            }
+
+        }
+
+        return i;
+    }
+
+    _isPrime(number: number): boolean {
+        if ((number === 2 || number === 3)){
+            return true;
+        }
+
+        let i = 2;
+
+        while (i <= (Math.sqrt(number))) {
+            if (number % i === 0) {
+                return false;
+            }
+
+            i++;
+        }
+
+        return true;
+    }
 }

@@ -52,4 +52,28 @@ describe('MathHelper', () => {
             expect(result).toBe(false);
         })
     })
+
+    describe('getNthPrime', () => {
+        it('should return the nth prime', () => {
+            expect(_sut.getNthPrime(6)).toBe(13);
+        })
+    })
+
+    describe('_isPrime', () => {
+        it('should return true if the number 2', () => {
+            expect(_sut._isPrime(2)).toBeTrue();
+        })
+
+        it('should return true if the number 3', () => {
+            expect(_sut._isPrime(3)).toBeTrue();
+        })
+
+        it('should return true if the number 5', () => {
+            expect(_sut._isPrime(5)).toBeTrue();
+        })
+
+        it('should return false if the number is not a prime', () => {
+            expect(_sut._isPrime(4)).toBeFalse();
+        })
+    })
 });

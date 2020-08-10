@@ -22,7 +22,8 @@ export class AppComponent {
     {id: 4, title: 'Largest palindrome product', description: 'A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99. Find the largest palindrome made from the product of two 3-digit numbers.'},
     {id: 5, title: 'Smallest multiple', description: '2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder. What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?'},
     // TODO IVO: Try to render it more nicely with MathJax
-    {id: 6, title: 'Sum square difference', description: 'The sum of the squares of the first ten natural numbers is 1^2 + 2^2 + ... + 10^2 = 385. The square of the sum of the first ten natural numbers is (1 + 2 + ... + 10)^2 = 55^2 = 3025. Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640. Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.'}
+    {id: 6, title: 'Sum square difference', description: 'The sum of the squares of the first ten natural numbers is 1^2 + 2^2 + ... + 10^2 = 385. The square of the sum of the first ten natural numbers is (1 + 2 + ... + 10)^2 = 55^2 = 3025. Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640. Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.'},
+    {id: 7, title: '10001st prime', description: 'By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13. What is the 10 001st prime number?'}
   ]
 
   getDescriptionById(id: number): string {
@@ -43,6 +44,8 @@ export class AppComponent {
         return this.projectEulerHelper.solutionOfProblem5;
       case 6:
         return this.projectEulerHelper.solutionOfProblem6;
+      case 7:
+        return this.projectEulerHelper.solutionOfProblem7;
       default:
         return "No problem selected";
     }
@@ -55,7 +58,8 @@ export class AppComponent {
       case 3: 
       case 4: 
       case 5:
-      case 6: return `${this.getSolutionById(id)} (computed in ${this.projectEulerHelper._numberOfMillisecondsUsedForLastComputation} ms)`
+      case 6: 
+      case 7: return `${this.getSolutionById(id)} (computed in ${this.projectEulerHelper._numberOfMillisecondsUsedForLastComputation} ms)`
       default: return this.getSolutionById(id).toString();
     }
   }
