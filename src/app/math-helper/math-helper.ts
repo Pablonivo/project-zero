@@ -34,6 +34,28 @@ export class MathHelper {
         return listOfPrimeFactors;
     }
 
+    getPrimeFactorization(number: number): Map<number, number> {
+        let listOfPrimeFactors = new Map<number, number>();
+        let i = 2;
+
+        while (number !== 1) {
+            if (number % i === 0){
+                if (listOfPrimeFactors.has(i)){
+                    listOfPrimeFactors.set(i, listOfPrimeFactors.get(i) + 1);
+                }
+                else {
+                    listOfPrimeFactors.set(i, 1);
+                }
+                number /= i;
+            }
+            else {
+                i++;
+            }
+        }
+
+        return listOfPrimeFactors;
+    }
+
     isPalindromeNumber(number: number): boolean {
         let numberToString = number.toString();
         let stringLength = numberToString.length;

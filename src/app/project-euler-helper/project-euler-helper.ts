@@ -35,6 +35,13 @@ export class ProjectEulerHelper{
         this._end();
         return result;
     }
+
+    get solutionOfProblem5(): number {
+        this._start();
+        let result = this._getSmallestNumberThatIsEvenlyDivisbleByNumbersFromOneToMax(20);
+        this._end();
+        return result;
+    }
     
     _getSumOfMultiplesOfNumbersBelowMax(numbers: number[], max: number): number {
         var multiplesList = [];
@@ -51,7 +58,7 @@ export class ProjectEulerHelper{
         let highestPalinedromeNumberFound = 1;
 
         for (let i = 1; i < max; i++) {
-            for (let j = 1; j < max; j++) {
+            for (let j = i; j < max; j++) {
                 let product = i * j;
                 if (this._mathHelper.isPalindromeNumber(product) && product > highestPalinedromeNumberFound){
                     highestPalinedromeNumberFound = product;
@@ -60,6 +67,28 @@ export class ProjectEulerHelper{
         }
 
         return highestPalinedromeNumberFound;
+    }
+
+    _getSmallestNumberThatIsEvenlyDivisbleByNumbersFromOneToMax(max: number) {
+        let requiredPrimeFactorsInNumberWeAreLookingFor = new Map<number, number>(); 
+        let numberWeAreLookingFor = 1;
+
+        for (let i = 2; i < max; i++) {
+            let primeFactorizationSmallerNumber = this._mathHelper.getPrimeFactorization(i);
+
+            for (let [prime, numberOfTimesInNumber] of primeFactorizationSmallerNumber){
+                if (!requiredPrimeFactorsInNumberWeAreLookingFor.has(prime)
+                    || (requiredPrimeFactorsInNumberWeAreLookingFor.has(prime) && requiredPrimeFactorsInNumberWeAreLookingFor.get(prime) < numberOfTimesInNumber)){
+                    requiredPrimeFactorsInNumberWeAreLookingFor.set(prime, numberOfTimesInNumber);
+                }
+            }
+        }
+
+        for (let [prime, numberOfTimesInNumber] of requiredPrimeFactorsInNumberWeAreLookingFor){
+            numberWeAreLookingFor *= Math.pow(prime, numberOfTimesInNumber);
+        }
+
+        return numberWeAreLookingFor;
     }
 
     private _start(): void {

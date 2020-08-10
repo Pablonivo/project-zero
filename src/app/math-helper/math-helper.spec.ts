@@ -27,6 +27,20 @@ describe('MathHelper', () => {
         })
     })
 
+    describe('getPrimeFactorization', () => {
+        it('should the prime factorization of the number', () => {
+            const result = _sut.getPrimeFactorization(90);
+            expect(result.has(2)).toBeTrue;
+            expect(result.has(3)).toBeTrue;
+            expect(result.has(5)).toBeTrue;
+            expect(result.has(7)).toBeFalse();
+
+            expect(result.get(2)).toBe(1);
+            expect(result.get(3)).toBe(2);
+            expect(result.get(5)).toBe(1);
+        })
+    })
+
     describe('isPalindromeNumber', () => {
         it('should true if the number is a palindrome', () => {
             const result = _sut.isPalindromeNumber(9009);

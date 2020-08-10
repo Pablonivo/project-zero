@@ -17,6 +17,13 @@ describe('ProjectEulerHelper', () => {
         })
     })
 
+    describe('_getSmallestNumberThatIsEvenlyDivisbleByNumbersFromOneToMax', () => {
+        it('should return smallest number that is evenly divisble by numbers from one to max', () => {
+            const result = _sut._getSmallestNumberThatIsEvenlyDivisbleByNumbersFromOneToMax(10);
+            expect(result).toBe(2520);
+        })
+    })
+
     describe('solutionOfProblem1', () => {
         it('should return the correct solution', () => {
             const resultProblem1 = _sut.solutionOfProblem1;
