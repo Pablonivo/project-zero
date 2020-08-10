@@ -42,6 +42,14 @@ export class ProjectEulerHelper{
         this._end();
         return result;
     }
+
+    get solutionOfProblem6(): number {
+        this._start();
+        let n = 100;
+        let result = this._getSquareOfSumOfFirstNaturalNumbers(n) - this._getSumofSquaresOfFirstNaturalNumbers(n);
+        this._end();
+        return result;
+    }
     
     _getSumOfMultiplesOfNumbersBelowMax(numbers: number[], max: number): number {
         var multiplesList = [];
@@ -89,6 +97,21 @@ export class ProjectEulerHelper{
         }
 
         return numberWeAreLookingFor;
+    }
+
+    _getSumofSquaresOfFirstNaturalNumbers(limit: number) {
+        let sum = 0;
+
+        for (let i = 1; i <= limit; i++) {
+            sum += i*i;
+        }
+
+        return sum;
+    }
+
+    _getSquareOfSumOfFirstNaturalNumbers(limit: number) {
+        let sum = limit * (limit + 1) / 2;
+        return sum * sum;
     }
 
     private _start(): void {

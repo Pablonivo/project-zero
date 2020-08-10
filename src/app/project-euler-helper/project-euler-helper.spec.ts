@@ -24,6 +24,20 @@ describe('ProjectEulerHelper', () => {
         })
     })
 
+    describe('_getSumofSquaresOfFirstNaturalNumbers', () => {
+        it('should return sum of the squares of the first n natural numbers', () => {
+            const result = _sut._getSumofSquaresOfFirstNaturalNumbers(10);
+            expect(result).toBe(385);
+        })
+    })
+
+    describe('_getSquareOfSumOfFirstNaturalNumbers', () => {
+        it('should return square of the sum of the first n natural numbers', () => {
+            const result = _sut._getSquareOfSumOfFirstNaturalNumbers(10);
+            expect(result).toBe(3025);
+        })
+    })
+
     describe('solutionOfProblem1', () => {
         it('should return the correct solution', () => {
             const resultProblem1 = _sut.solutionOfProblem1;
@@ -49,6 +63,20 @@ describe('ProjectEulerHelper', () => {
         it('should return the correct solution', () => {
             const resultProblem4 = _sut.solutionOfProblem4;
             expect(resultProblem4).toBe(906609);
+        })
+    })
+
+    describe('solutionOfProblem5', () => {
+        it('should return the correct solution', () => {
+            const resultProblem5 = _sut.solutionOfProblem5;
+            expect(resultProblem5).toBe(232792560);
+        })
+    })
+
+    describe('solutionOfProblem6', () => {
+        it('should return the correct solution', () => {
+            const resultProblem6 = _sut.solutionOfProblem6;
+            expect(resultProblem6).toBe(25164150);
         })
     })
 });
