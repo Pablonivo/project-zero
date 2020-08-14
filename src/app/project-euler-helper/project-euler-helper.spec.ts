@@ -38,6 +38,16 @@ describe('ProjectEulerHelper', () => {
         })
     })
 
+    describe('_getLargestProductOfNAdjacentDigitsOfStringOfNumbers', () => {
+        it('should return the largest product of n adjacent digits of a string of numbers', () => {
+            const result = _sut._getLargestProductOfNAdjacentDigitsOfStringOfNumbers('12345', 2);
+            expect(result).toBe(20);
+
+            const result2 = _sut._getLargestProductOfNAdjacentDigitsOfStringOfNumbers(_sut._1000digitStringForProblem8, 4);
+            expect(result2).toBe(5832);
+        })
+    })
+
     describe('solutionOfProblem1', () => {
         it('should return the correct solution', () => {
             const resultProblem1 = _sut.solutionOfProblem1;
@@ -84,6 +94,13 @@ describe('ProjectEulerHelper', () => {
         it('should return the correct solution', () => {
             const resultProblem7 = _sut.solutionOfProblem7;
             expect(resultProblem7).toBe(104743);
+        })
+    })
+
+    describe('solutionOfProblem8', () => {
+        it('should return the correct solution', () => {
+            const resultProblem8 = _sut.solutionOfProblem8;
+            expect(resultProblem8).toBe(23514624000);
         })
     })
 });

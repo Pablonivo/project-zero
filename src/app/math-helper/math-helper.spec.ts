@@ -60,15 +60,15 @@ describe('MathHelper', () => {
     })
 
     describe('_isPrime', () => {
-        it('should return true if the number 2', () => {
+        it('should return true if the number is 2', () => {
             expect(_sut._isPrime(2)).toBeTrue();
         })
 
-        it('should return true if the number 3', () => {
+        it('should return true if the number is 3', () => {
             expect(_sut._isPrime(3)).toBeTrue();
         })
 
-        it('should return true if the number 5', () => {
+        it('should return true if the number is 5', () => {
             expect(_sut._isPrime(5)).toBeTrue();
         })
 

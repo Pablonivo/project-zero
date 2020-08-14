@@ -24,6 +24,11 @@
     flex: 1;
   }
 
+  .white-space-pre-line {
+    text-align: center;
+    white-space: pre-line;
+  }
+
   .toolbar {
     position: absolute;
     top: 0;
@@ -92,7 +97,7 @@
 
   .card.card-small {
     height: 16px;
-    width: 168px;
+    width: 300px;
   }
 
   .card-container .card:not(.highlight-card) {
