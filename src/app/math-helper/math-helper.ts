@@ -85,6 +85,18 @@ export class MathHelper {
         return i;
     }
 
+    getPrimesUpTomax(max: number): number[] {
+        let primesList = [];
+
+        for (let i = 2; i < max; i++) {
+            if (this._isPrime(i)) {
+                primesList.push(i);
+            }
+        }
+
+        return primesList;
+    }
+
     _isPrime(number: number): boolean {
         if ((number === 2 || number === 3)){
             return true;

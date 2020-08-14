@@ -47,7 +47,8 @@ export class AppComponent {
     + '\n71636269561882670428252483600823257530420752963450'
     + '\nFind the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?'
     },
-    {id: 9, title: 'Special Pythagorean triplet', description: 'A Pythagorean triplet is a set of three natural numbers, a < b < c, for which a^2 + b^2 = c^2. For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2. There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product abc.' }
+    {id: 9, title: 'Special Pythagorean triplet', description: 'A Pythagorean triplet is a set of three natural numbers, a < b < c, for which a^2 + b^2 = c^2. For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2. There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product abc.' },
+    {id: 10, title: 'Summation of primes', description: 'The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17. Find the sum of all the primes below two million.'}
   ]
 
   getDescriptionById(id: number): string {
@@ -74,6 +75,8 @@ export class AppComponent {
         return this.projectEulerHelper.solutionOfProblem8;
       case 9:
         return this.projectEulerHelper.solutionOfProblem9;
+      case 10:
+        return this.projectEulerHelper.solutionOfProblem10;
       default:
         return "No problem selected";
     }
@@ -89,7 +92,8 @@ export class AppComponent {
       case 6: 
       case 7: 
       case 8: 
-      case 9: return `${this.getSolutionById(id)} (computed in ${this.projectEulerHelper._numberOfMillisecondsUsedForLastComputation} ms)`
+      case 9: 
+      case 10: return `${this.getSolutionById(id)} (computed in ${this.projectEulerHelper._numberOfMillisecondsUsedForLastComputation} ms)`
       default: return this.getSolutionById(id).toString();
     }
   }

@@ -55,6 +55,13 @@ describe('ProjectEulerHelper', () => {
         })
     })
 
+    describe('_getSumOfPrimesUpToMax', () => {
+        it('should return the sum of the primes up to the max parameter', () => {
+            const result = _sut._getSumOfPrimesUpToMax(10);
+            expect(result).toBe(17);
+        })
+    })
+
     describe('solutionOfProblem1', () => {
         it('should return the correct solution', () => {
             const resultProblem1 = _sut.solutionOfProblem1;
@@ -114,7 +121,14 @@ describe('ProjectEulerHelper', () => {
     describe('solutionOfProblem9', () => {
         it('should return the correct solution', () => {
             const resultProblem9 = _sut.solutionOfProblem9;
-            expect(resultProblem9).toBe(31875000 );
+            expect(resultProblem9).toBe(31875000);
+        })
+    })
+
+    describe('solutionOfProblem10', () => {
+        it('should return the correct solution', () => {
+            const resultProblem10 = _sut.solutionOfProblem10;
+            expect(resultProblem10).toBe(142913828922);
         })
     })
 });

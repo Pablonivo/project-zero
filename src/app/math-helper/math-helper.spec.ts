@@ -86,4 +86,10 @@ describe('MathHelper', () => {
             expect(_sut._isPythagoreanTriplet(3, 4, 6)).toBeFalse();
         })
     })
+
+    describe('getPrimesUpTomax', () => {
+        it('should return a list of the primes up to the max parameter', () => {
+            expect(_sut.getPrimesUpTomax(10)).toEqual([2, 3, 5, 7]);
+        })
+    })
 });

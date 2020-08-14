@@ -73,6 +73,13 @@ export class ProjectEulerHelper{
         this._end();
         return result;
     }
+
+    get solutionOfProblem10(): number {
+        this._start();
+        let result = this._getSumOfPrimesUpToMax(2000000);
+        this._end();
+        return result;
+    }
     
     _getSumOfMultiplesOfNumbersBelowMax(numbers: number[], max: number): number {
         var multiplesList = [];
@@ -164,6 +171,12 @@ export class ProjectEulerHelper{
                 }
             }
         }
+    }
+
+    _getSumOfPrimesUpToMax(max : number): number {
+        let result = this._mathHelper.getPrimesUpTomax(max)
+            .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        return result;
     }
 
     private _start(): void {
