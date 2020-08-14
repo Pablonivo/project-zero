@@ -66,6 +66,13 @@ export class ProjectEulerHelper{
         this._end();
         return result;
     }
+
+    get solutionOfProblem9(): number {
+        this._start();
+        let result = this._getProductOfPythagoreanTripletOfWhichSumEquals(1000);
+        this._end();
+        return result;
+    }
     
     _getSumOfMultiplesOfNumbersBelowMax(numbers: number[], max: number): number {
         var multiplesList = [];
@@ -146,6 +153,17 @@ export class ProjectEulerHelper{
         }
 
         return largestProduct
+    }
+
+    _getProductOfPythagoreanTripletOfWhichSumEquals(sum: number): number {
+        for (let a = 1; a < sum/3 ; a++) {
+            for (let b = a + 1; b < 2*sum/3; b++) {
+                let c = sum - b - a;
+                if (this._mathHelper._isPythagoreanTriplet(a,b,c)) {
+                    return a * b * c
+                }
+            }
+        }
     }
 
     private _start(): void {

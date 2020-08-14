@@ -48,6 +48,13 @@ describe('ProjectEulerHelper', () => {
         })
     })
 
+    describe('_getProductOfPythagoreanTripletOfWhichSumEquals', () => {
+        it('should return 3*4*5 = 60 if 12 is the parameter', () => {
+            const result = _sut._getProductOfPythagoreanTripletOfWhichSumEquals(12);
+            expect(result).toBe(60);
+        })
+    })
+
     describe('solutionOfProblem1', () => {
         it('should return the correct solution', () => {
             const resultProblem1 = _sut.solutionOfProblem1;
@@ -101,6 +108,13 @@ describe('ProjectEulerHelper', () => {
         it('should return the correct solution', () => {
             const resultProblem8 = _sut.solutionOfProblem8;
             expect(resultProblem8).toBe(23514624000);
+        })
+    })
+
+    describe('solutionOfProblem9', () => {
+        it('should return the correct solution', () => {
+            const resultProblem9 = _sut.solutionOfProblem9;
+            expect(resultProblem9).toBe(31875000 );
         })
     })
 });

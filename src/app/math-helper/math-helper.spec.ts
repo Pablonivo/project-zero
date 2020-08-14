@@ -76,4 +76,14 @@ describe('MathHelper', () => {
             expect(_sut._isPrime(4)).toBeFalse();
         })
     })
+
+    describe('_isPythagoreanTriplet', () => {
+        it('should return true if a Pythagorean triplet is provided', () => {
+            expect(_sut._isPythagoreanTriplet(3, 4, 5)).toBeTrue();
+        })
+
+        it('should return false if the triplet provided is not a Pythagorean triplet', () => {
+            expect(_sut._isPythagoreanTriplet(3, 4, 6)).toBeFalse();
+        })
+    })
 });
